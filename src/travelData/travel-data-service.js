@@ -14,22 +14,26 @@ const travelDataService = {
 			})
 	},
 
-	getById(knex, id) {
+	getById(knex, user_id) {
+		console.log(user_id)
+		return knex
+		
+			.from('travel_data')
+			.select('*')
+			.where('user_id', user_id )
+			
+			
+	},
+	
+		getByUserId(knex, id) {
+	
 		return knex
 			.from('travel_data')
 			.select('*')
-			.where('id', id)
+			.where('id', 'LIKE', `%${id}%`)
 			.first()
 	},
 
-	getByName(knex, name) {
-		console.log(name)
-		return knex
-			.from('travel_data')
-			.select('*')
-			.where('name', 'LIKE', `%${name}%`)
-			.first()
-	},
 
 	deleteData(knex, id) {
 		return knex('travel_data')

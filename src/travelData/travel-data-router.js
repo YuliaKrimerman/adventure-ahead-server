@@ -36,18 +36,37 @@ travelRouter
 			.then(newTravelData => {
 				res
 					.status(201)
-			.location('/listTravel/${user_id}')
+			//.location('/listTravel/${user_id}`')
 					.json(newTravelData)
 			})
 		
 			
 			.catch(next)
 	});
-			
+						 
+travelRouter
+  .route('/listTravel/:user_id')
+    .all((req, res, next) => {
+        travelDataService.getById(
+            req.app.get('db'),
+            req.params.user_id
+        )
+            .then(note => {
+                if (!note) {
+                    return res.status(404).json({
+                        error: { message: `note doesn't exist` }
+                    })
+                }
+             res.note = note // save the note for the next middleware
+              next() // don't forget to call next so the next middleware happens!
+            })
+            .catch(next)
+    })
 
 
-
-
+   .get((req, res, next) => {
+        res.json(res.note)
+    })
 
 
 
