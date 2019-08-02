@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
-
 const UsersService = require('./users-service')
+const UsersPackService = require('./UsersPackService')
 const xss = require('xss')
 
 const usersRouter = express.Router()
@@ -61,10 +61,47 @@ usersRouter
                         return UsersService
                             .insertUser(req.app.get('db'), newUser)
                             .then(user => {
+							console.log("here")
+							
+							const defaultPackList= [{list:'Lightweight clothing that can be layered',user_id:user.id,checked:false},
+													{list:'Long-sleeved shirts',user_id:user.id,checked:false},
+													{list:'Sweaters or fleece jacket',user_id:user.id,checked:false},
+													{list:'T-shirts and tank tops (be respectful of the culture you are visiting)',user_id:user.id,checked:false},
+													{list:'Belt – Check out this one for a ingenuitive money protection option',user_id:user.id,checked:false},
+													{list:'Socks – wool socks are best for hiking',user_id:user.id,checked:false},
+													{list:'Comfortable walking shoes',user_id:user.id,checked:false},
+													{list:'Rain jacket, windbreaker or umbrella',user_id:user.id,checked:false},
+													{list:'Pajamas/sleepwear',user_id:user.id,checked:false},
+													{list:'Underwear',user_id:user.id,checked:false},
+													{list:'Sunglasses and glasses case',user_id:user.id,checked:false},
+													{list:'Dresses and/or skirts',user_id:user.id,checked:false},
+													{list:'Jewelry – organize in a mini cube or circlet',user_id:user.id,checked:false},
+													{list:'Hat or sun visor',user_id:user.id,checked:false},
+													{list:'Scarf or bandana',user_id:user.id,checked:false},
+													{list:'Swimsuit or swim trunks – consider a wet/dry organizer',user_id:user.id,checked:false},
+													{list:'Cell phone and charger',user_id:user.id,checked:false},
+													{list:'Travel speakers',user_id:user.id,checked:false},
+													{list:'Electric converters and adapters',user_id:user.id,checked:false},
+													{list:'Travel apps that will help with language, directions, and money conversion()',user_id:user.id,checked:false},
+													{list:'Sunscreen',user_id:user.id,checked:false},
+													{list:'Toiletries',user_id:user.id,checked:false},
+													{list:'Passport and Travel Documents',user_id:user.id,checked:false},
+													{list:'Credit Card Travel Notice',user_id:user.id,checked:false},
+													{list:'Travel Insurance',user_id:user.id,checked:false}
+												   ]
+							 return UsersPackService
+                            .insertDefaultPackList(req.app.get('db'), defaultPackList)
+                            .then(output => {
+							console.log(output)
                                 res
                                     .status(201)
                                     .location(path.posix.join(req.originalUrl, `/${user.id}`))
                                     .json(serializeUser(user))
+                            })
+							
+					
+							
+					
                             })
                     })
             })

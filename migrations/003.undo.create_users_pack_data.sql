@@ -1,0 +1,1 @@
+DROP TABLE users_pack_data;

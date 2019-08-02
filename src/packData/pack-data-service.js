@@ -1,12 +1,18 @@
-const userDataService = {
-	getAllUserData(knex) {
-		return knex.select('*').from('users_data')
+const packDataService = {
+	getAllPack(knex) {
+		return knex.select('*').from('pack_data')
+		//.join('users_data',{'users_data.id':'pack_data.user_id'})
 	},
-
-	insertUserData(knex, newData) {
+	
+	getUsersPack(knex) {
+		return knex.select('*').from('pack_data')
+		.join('users_data',{'users_data.id':'pack_data.user_id'})
+	},
+	
+	insertPackData(knex, newData) {
 		return knex
 			.insert(newData)
-			.into('users_data')
+			.into('pack_data')
 			.returning('*')
 			.then(rows => {
 				return rows[0]
@@ -15,22 +21,24 @@ const userDataService = {
 
 	getById(knex, code) {
 		return knex
-			.from('users_data')
+			.from('pack_data')
 			.select('*')
 			.where('code', code)
 
 	},
-
-	getRatings(knex, rating) {
+	
+	getByUserId(knex, user_id) {
+		console.log(user_id)
 		return knex
-			.from('users_data')
+			.from('travel_data')
 			.select('*')
-			.where('rating', rating)
-
+			.where('user_id', user_id )
 	},
+	
+
 
 	deleteUserData(knex, id) {
-		return knex('users_data')
+		return knex('pack_data')
 			.where({
 				id
 			})
@@ -38,7 +46,7 @@ const userDataService = {
 	},
 
 	updateUserData(knex, id, newUserDataFields) {
-		return knex('users_data')
+		return knex('pack_data')
 			.where({
 				id
 			})
@@ -46,4 +54,4 @@ const userDataService = {
 	},
 }
 
-module.exports = userDataService;
+module.exports = packDataService;
