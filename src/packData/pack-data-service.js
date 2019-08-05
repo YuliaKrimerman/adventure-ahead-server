@@ -45,13 +45,5 @@ const packDataService = {
 			.delete()
 	},
 
-	updateUserData(knex, id, newUserDataFields) {
-		return knex('pack_data')
-			.where({
-				id
-			})
-			.update(newUserDataFields)
-	},
 }
-
 module.exports = packDataService;

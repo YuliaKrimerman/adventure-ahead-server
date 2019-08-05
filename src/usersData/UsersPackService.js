@@ -32,12 +32,12 @@ const usersPackService = {
 			.delete()
 	},
 
-	updateData(knex, id, newDataFields) {
+	updateData(knex, id, checked) {
 		return knex('users_pack_data')
 			.where({
-				id
+				 id
 			})
-			.update(newFolderFields)
+			.update(checked)
 	},
 }
 

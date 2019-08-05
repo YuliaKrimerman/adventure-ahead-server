@@ -35,6 +35,24 @@ packRouter
 	})
 
 						 
+	packRouter
+	.route('/packData/:user_id/:id')
+    .patch(jsonParser, (req, res, next) => {
+	const checked = req.body
+    
+
+        usersPackService.updateData(
+            req.app.get('db'),
+            req.params.id,
+			checked
+        
+        )
+            .then(numRowsAffected => {
+                res.status(204).end()
+            })
+            .catch(next)
+    })
+
 						 
 						 
 
