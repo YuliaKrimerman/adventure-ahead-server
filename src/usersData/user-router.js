@@ -82,7 +82,7 @@ usersRouter
 													{list:'Cell phone and charger',user_id:user.id,checked:false},
 													{list:'Travel speakers',user_id:user.id,checked:false},
 													{list:'Electric converters and adapters',user_id:user.id,checked:false},
-													{list:'Travel apps that will help with language, directions, and money conversion()',user_id:user.id,checked:false},
+													{list:'Travel apps that will help with language, directions, and money conversion',user_id:user.id,checked:false},
 													{list:'Sunscreen',user_id:user.id,checked:false},
 													{list:'Toiletries',user_id:user.id,checked:false},
 													{list:'Passport and Travel Documents',user_id:user.id,checked:false},
