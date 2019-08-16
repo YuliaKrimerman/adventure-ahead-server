@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
+const { CLIENT_ORIGIN } = require('./config')
 const travelRouter = require('./travelData/travel-data-router');
 const packRouter = require('./packData/pack-data-router');
 const usersRouter = require('./usersData/user-router');
@@ -24,7 +25,6 @@ app.use(
 );
 app.use(helmet())
 app.use(usersRouter)
-
 app.use(authRouter)
 app.use(travelRouter)
 app.use(packRouter)
