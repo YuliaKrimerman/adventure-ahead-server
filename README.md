@@ -14,7 +14,7 @@ Adventure Ahead is an app that allows you to search for highlight places to visi
 #### Home page
 ![1111](https://user-images.githubusercontent.com/46899367/63277453-5d120380-c273-11e9-8ffe-1ba5698f4f8d.png)
 
-#### Registration page (POST,/user)
+#### Registration page (POST-/user)
 ![one](https://user-images.githubusercontent.com/46899367/63277780-f214fc80-c273-11e9-9b8b-346bac4dea96.png)
 
 #### Login page (POST-/login)
