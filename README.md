@@ -14,18 +14,18 @@ Adventure Ahead is an app that allows you to search for highlight places to visi
 #### Home page
 ![1111](https://user-images.githubusercontent.com/46899367/63277453-5d120380-c273-11e9-8ffe-1ba5698f4f8d.png)
 
-#### Registration page
+#### Registration page (POST,/user)
 ![one](https://user-images.githubusercontent.com/46899367/63277780-f214fc80-c273-11e9-9b8b-346bac4dea96.png)
 
-#### Login page
+#### Login page (POST-/login)
 ![seven](https://user-images.githubusercontent.com/46899367/63641671-507d1900-c680-11e9-8b26-82c47e1036f9.png)
-#### Search page
+#### Search page (GET- Google Maps API,Triposo API)
 ![88](https://user-images.githubusercontent.com/46899367/63641676-612d8f00-c680-11e9-98d0-8ca11ceb1d33.png)
-#### Results page
+#### Results page (POST- /listTravel/:user_id/)
 ![99](https://user-images.githubusercontent.com/46899367/63641753-925a8f00-c681-11e9-849f-0bdeca9cb799.png)
-#### Bucketlist
+#### Bucketlist ( GET, DELETE- /listTravel/:user_id/:id')
 ![three](https://user-images.githubusercontent.com/46899367/63277787-f6411a00-c273-11e9-962a-99c54ad0a072.png)
-#### Packing List
+#### Packing List (GET-/packData/:user_id';PATCH- /packData/:user_id/:id')
 ![Untitledererer](https://user-images.githubusercontent.com/46899367/63641764-c33ac400-c681-11e9-9c2e-9ac67e83c529.png)
 
 
