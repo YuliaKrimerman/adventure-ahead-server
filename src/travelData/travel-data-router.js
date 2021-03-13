@@ -126,9 +126,7 @@ travelRouter
 		const {snippet,name,user_id} = req.body
 		travelDataService.getLatestId(req.app.get('db') )
 			.then(latestIdValue => {
-			console.log(latestIdValue[0].id)
 			const newData = {snippet,name,user_id,id:(latestIdValue[0].id+1)}
-			console.log(newData)
 			 	travelDataService.insertData(req.app.get('db'), newData)
 			.then(newTravelData => {
 				res
