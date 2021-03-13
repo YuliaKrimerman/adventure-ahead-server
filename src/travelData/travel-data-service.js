@@ -15,7 +15,6 @@ const travelDataService = {
 	},
 
 	getByUserId(knex, user_id) {
-		console.log(user_id)
 		return knex
 			.from('travel_data')
 			.select('*')
