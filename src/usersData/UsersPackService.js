@@ -15,7 +15,6 @@ const usersPackService = {
 	},
 	
 	getByUserId(knex, user_id) {
-		console.log(user_id)
 		return knex
 			.from('users_pack_data')
 			.select('*')
