@@ -61,7 +61,6 @@ usersRouter
                         return UsersService
                             .insertUser(req.app.get('db'), newUser)
                             .then(user => {
-							console.log("here")
 							
 							const defaultPackList= [{list:'Lightweight clothing that can be layered',user_id:user.id,checked:false},
 													{list:'Long-sleeved shirts',user_id:user.id,checked:false},
